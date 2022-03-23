@@ -1,0 +1,14 @@
+[Unit]
+Description=wlshare allows zoom screensharing via a virtual camera on non-Gnome Wayland compositors
+PartOf=graphical-session.target
+
+[Service]
+Type=forking
+WorkingDirectory=/home/paul/.local/bin
+ExecStart=/bin/bash wlshare.sh
+Restart=on-failure
+RestartSec=1
+TimeoutStopSec=10
+
+[Install]
+WantedBy=sway-session.target
